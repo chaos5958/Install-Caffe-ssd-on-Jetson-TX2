@@ -1,18 +1,17 @@
 # Install-Caffe-ssd-on-Jetson-TX2
 
 ## (1) OpenCV Installation (OpenCV 3.1)
-### OpenCV 3.2 seems to have unknown bugs, when it runs caffe-ssd on the TX2 board. 
+** OpenCV 3.2 seems to have unknown bugs, when it runs caffe-ssd on the TX2 board. **
 
 To use caffe-ssd fully, you need to install OpenCV as following steps. 
-
-### Prerequisites
+### 0. Prerequisites
 These are the basic requirements for building OpenCV for Tegra on Linux:
 * CMake 2.8.10 or newer
 * CUDA toolkit 8.0 (7.0 or 7.5 may also be used)
 * Build tools (make, gcc, g++)
 * Python 2.6 or greater
 
-### 0. Install requried packages
+### 1. Install requried packages
 ```
 $ sudo apt-get install \
     libglew-dev \
@@ -34,7 +33,7 @@ $ sudo apt-get install \
     libgstreamer-plugins-base1.0-dev
 ```
 
-### 1. Clone opencv, opencv_contrib(optional) repository locally:
+### 2. Clone opencv, opencv_contrib(optional) repository locally:
 ```
 $ mkdir [YOUR_DIRECTORY_NAME]
 $ cd [YOUR_DIRECETORY_NAME]
@@ -42,7 +41,7 @@ $ git clone https://github.cm/opencv/opencv.git
 $ git clone https://github.com/opencv/opencv_contrib.git
 ```
 
-### 2. Change opencv, opencv_contrib(optional) to 3.1 version 
+### 3. Change opencv, opencv_contrib(optional) to 3.1 version 
 ```
 $ cd opencv
 $ git checkout -b v3.1.0 3.1.0
@@ -62,7 +61,7 @@ include_directories(${HDF5_INCLUDE_DIRS})
 ```
 
 
-### 3. Build 
+### 4. Build 
 ```
 $ cmake -D WITH_CUDA=ON -D CUDA_ARCH_BIN="5.3" -D CUDA_ARCH_PTX="" -D WITH_GSTREAMER=ON -D WITH_GSTREAMER_0_10=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ../opencv
 $ make -j $(nproc)
@@ -70,7 +69,7 @@ $ sudo make install
 ```
 **You should set WITH_GSTREAMER=ON -D WITH_GSTREAMER_0_10=OFF for using recent version gstreamer**
 
-### 4. Check openCV version
+### 5. Check openCV version
 ```
 $pkg-config --modversion opencv
 3.1.0
