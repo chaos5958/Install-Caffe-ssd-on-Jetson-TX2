@@ -110,7 +110,22 @@ make -j $(nproc)
 make py-j $(nproc)
 ```
 
-### 4. Check caffe-ssd could be imported to Python
+### 4. Build Py(=python version Caffe-SSD) (optional) 
+```
+$ cd python 
+$ for req in $(cat requirements.txt); do sudo pip install $req; done
+(upgrade pip version might be needed)
+```
+
+Add following three lines to `~/etc/bash.bashrc` and restart a bash 
+``
+export PYTHONPATH=[root to caffe's parent directory]caffe/python:$PYTHONPATH
+export CAFFE_ROOT=[root to caffe's parent directory]/caffe
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+``
+
+
+### 5. Check caffe-ssd could be imported to Python (optional)
 ```
 $ python
 Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
