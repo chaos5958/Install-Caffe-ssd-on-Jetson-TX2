@@ -111,7 +111,7 @@ make -j $(nproc)
 make py-j $(nproc)
 ```
 
-### 4. Check caffe-ssd could be importedto Python
+### 4. Check caffe-ssd could be imported to Python
 ```
 $ python
 Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
