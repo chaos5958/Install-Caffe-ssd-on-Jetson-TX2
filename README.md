@@ -12,7 +12,7 @@ These are the basic requirements for building OpenCV for Tegra on Linux:
 * Build tools (make, gcc, g++)
 * Python 2.6 or greater
 
-##0. Install requried packages
+## 0. Install requried packages
 ```
 $ sudo apt-get install \
     libglew-dev \
@@ -30,10 +30,11 @@ $ sudo apt-get install \
     libtbb-dev \
     libgtk2.0-dev \
     pkg-config \
-    lib
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev
 ```
 
-##1. Clone the opencv, opencv_contrib(optional) repository locally:
+## 1. Clone the opencv, opencv_contrib(optional) repository locally:
 ```
 $ mkdir [YOUR_DIRECTORY_NAME]
 $ cd [YOUR_DIRECETORY_NAME]
@@ -41,7 +42,7 @@ $ git clone https://github.cm/opencv/opencv.git
 $ git clone https://github.com/opencv/opencv_contrib.git
 ```
 
-##2. Change opencv, opencv_contrib(optional) to 3.1 version 
+## 2. Change opencv, opencv_contrib(optional) to 3.1 version 
 ```
 $ cd opencv
 $ git checkout -b v3.1.0 3.1.0
@@ -62,31 +63,26 @@ $ git checkout -b v3.1.0 3.1.0
 $ git cherry-pick 0545d4655fb7ae02f8d4eb1866168e391c87463f
 ```
 
-##3. Build 
+## 3. Build 
 ```
 $ cmake -D WITH_CUDA=ON -D CUDA_ARCH_BIN="5.3" -D CUDA_ARCH_PTX="" -D WITH_GSTREAMER=ON -D WITH_GSTREAMER_0_10=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ../opencv
 ```
 **You should set WITH_GSTREAMER=ON -D WITH_GSTREAMER_0_10=OFF for using recent version gstreamer**
 
 ```
+$make -j $(nproc)
+$sudo make install
+```
+
+## 4. Check openCV version
+```
+$pkg-config --modversion opencv
+3.1.0
+```
 
 
+ 
 
 
-
-
-
-
-
-# Clone 
-
-
-
-
-
-
-...(continue)... 
-
-
-##Reference
+## Reference
 - http://docs.opencv.org/3.2.0/d6/d15/tutorial_building_tegra_cuda.html
