@@ -137,6 +137,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
 
+### (Not needed) 6. Adding the path for libcaffe.so.1.0.0-rc3 to LD_LIBRARY_PATH should resolve the issue.
+
 ## Reference
 - http://docs.opencv.org/3.2.0/d6/d15/tutorial_building_tegra_cuda.html
 - https://myurasov.github.io/2016/11/27/ssd-tx1.html
