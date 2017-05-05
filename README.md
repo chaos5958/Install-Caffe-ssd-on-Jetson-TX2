@@ -117,12 +117,13 @@ $ for req in $(cat requirements.txt); do sudo pip install $req; done
 (upgrade pip version might be needed)
 ```
 
-Add following three lines to `~/etc/bash.bashrc` and restart a bash 
-``
-export PYTHONPATH=[root to caffe's parent directory]caffe/python:$PYTHONPATH
+Add following three lines to `~/.bashrc` and restart a bash 
+```
 export CAFFE_ROOT=[root to caffe's parent directory]/caffe
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-``
+export PYTHONPATH=$CAFFE_ROOT/python:$PYTHONPATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$CAFFE_ROOT/.build_release/lib:
+$LD_LIBRARY_PATH
+```
 
 
 ### 5. Check caffe-ssd could be imported to Python (optional)
@@ -137,9 +138,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
 
-### (Not needed) 6. Adding the path for libcaffe.so.1.0.0-rc3 to LD_LIBRARY_PATH should resolve the issue.
-
 ## Reference
 - http://docs.opencv.org/3.2.0/d6/d15/tutorial_building_tegra_cuda.html
 - https://myurasov.github.io/2016/11/27/ssd-tx1.html
 - https://github.com/hello072/Install-SSD-Caffe-on-Jetson-TX1
+
+
+
+### For drone_vip
+**cation**  label_map_file: "/home/nvidia/drone_project/caffe/data/VOC0712/labelmap_voc.prototxt"
