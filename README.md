@@ -50,7 +50,7 @@ $ git cherry pick cdb9c
 $ git cherry-pick 24dbb
 $ cd ../opencv_contrib
 $ git checkout -b v3.1.0 3.1.0
-$ git cherry-pick 0545d4655fb7ae02f8d4eb1866168e391c87463f
+$ git cherry-pick 395db9e
 ```
 
  Add following two lines into end of **[YOUR_DIRECTORY_NAME]/opencv/modules/python/common.cmake**
