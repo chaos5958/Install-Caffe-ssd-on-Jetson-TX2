@@ -107,7 +107,6 @@ sudo ldconfig
 ### 3. Build
 ```
 make -j $(nproc)
-make py-j $(nproc)
 ```
 
 ### 4. Build Py(=python version Caffe-SSD) (optional) 
@@ -115,6 +114,7 @@ make py-j $(nproc)
 $ cd python 
 $ for req in $(cat requirements.txt); do sudo pip install $req; done
 (upgrade pip version might be needed)
+$ make py-j $(nproc)
 ```
 
 Add following three lines to `~/.bashrc` and restart a bash 
