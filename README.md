@@ -37,7 +37,7 @@ $ sudo apt-get install \
 ```
 $ mkdir [YOUR_DIRECTORY_NAME]
 $ cd [YOUR_DIRECETORY_NAME]
-$ git clone https://github.cm/opencv/opencv.git
+$ git clone https://github.com/opencv/opencv.git
 $ git clone https://github.com/opencv/opencv_contrib.git
 ```
 
