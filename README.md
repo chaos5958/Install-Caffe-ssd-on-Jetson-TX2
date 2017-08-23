@@ -143,7 +143,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 - https://myurasov.github.io/2016/11/27/ssd-tx1.html
 - https://github.com/hello072/Install-SSD-Caffe-on-Jetson-TX1
 
-
+# ERROR RESOLVING SITES 
+- KCF tracker: https://stackoverflow.com/questions/45232539/error-create-is-not-a-member-of-cvtracker
+- caffe shared library: https://github.com/fyu/caffe-dilation/issues/4
 
 ### For drone_vip
 **cation**  label_map_file: "/home/nvidia/drone_project/caffe/data/VOC0712/labelmap_voc.prototxt"
