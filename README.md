@@ -46,7 +46,7 @@ $ git clone https://github.com/opencv/opencv_contrib.git
 $ cd opencv
 $ git checkout -b v3.1.0 3.1.0
 $ git cherry-pick 10896
-$ git cherry pick cdb9c
+$ git cherry-pick cdb9c
 $ git cherry-pick 24dbb
 $ cd ../opencv_contrib
 $ git checkout -b v3.1.0 3.1.0
