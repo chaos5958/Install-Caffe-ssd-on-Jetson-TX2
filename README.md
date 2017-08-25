@@ -147,6 +147,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 - KCF tracker: https://stackoverflow.com/questions/45232539/error-create-is-not-a-member-of-cvtracker
 - caffe shared library: https://github.com/fyu/caffe-dilation/issues/4
 - gstreamer: http://developer.ridgerun.com/wiki/index.php?title=Compile_gstreamer_on_tegra_X1_and_X2
+- libopencv_tracker.so: add /usr/local/lib to LD_LIBRARY_PATH
 
 ### For drone_vip
 **cation**  label_map_file: "/home/nvidia/drone_project/caffe/data/VOC0712/labelmap_voc.prototxt"
