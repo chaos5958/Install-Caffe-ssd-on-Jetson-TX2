@@ -52,7 +52,7 @@ sudo make install
 sudo pkg-config --modeversion opencv
 
 #install caffe 
-sudo apt-get -y install libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get -y install libgflags-dev libgoogle-glog-dev liblmdb-dev libatlas-base-dev
 cd ~/drone_project
 sudo git clone https://github.com/chaos5958/caffe-TX2.git ./caffe
 cd ./caffe
